@@ -1,0 +1,1680 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sharon Brewster - Special Educator & Software Engineer</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #6B9BD1;
+            --secondary: #8B7AB8;
+            --accent: #A8D5BA;
+            --dark: #2C3E50;
+            --light: #F8F9FA;
+            --white: #FFFFFF;
+            --text: #34495E;
+            --gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            color: var(--text);
+            line-height: 1.6;
+            overflow-x: hidden;
+            background: var(--light);
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 2px 20px rgba(0,0,0,0.1);
+            z-index: 1000;
+            padding: 1rem 0;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 2rem;
+        }
+
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            font-weight: 700;
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--dark);
+            font-weight: 500;
+            transition: color 0.3s;
+            position: relative;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--gradient);
+            transition: width 0.3s;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            gap: 4px;
+        }
+
+        .hamburger span {
+            width: 25px;
+            height: 3px;
+            background: var(--dark);
+            transition: all 0.3s;
+            border-radius: 3px;
+        }
+
+        .hamburger.active span:nth-child(1) {
+            transform: rotate(45deg) translate(5px, 5px);
+        }
+
+        .hamburger.active span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .hamburger.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(7px, -6px);
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #FFFFFF;
+            padding: 8rem 2rem 4rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Animated Background */
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: transparent;
+            z-index: 1;
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(255, 255, 255, 0) 0%, transparent 70%);
+            border-radius: 50%;
+            top: -200px;
+            right: -200px;
+            animation: float 6s ease-in-out infinite;
+            z-index: 1;
+        }
+
+        .animated-circle {
+            position: absolute;
+            border-radius: 50%;
+            z-index: 1;
+            opacity: 0;
+        }
+
+        .circle-1 {
+            width: 300px;
+            height: 300px;
+            background: transparent;
+            bottom: -100px;
+            left: -100px;
+        }
+
+        .circle-2 {
+            width: 200px;
+            height: 200px;
+            background: transparent;
+            top: 50%;
+            right: 10%;
+        }
+
+        .circle-3 {
+            width: 150px;
+            height: 150px;
+            background: transparent;
+            top: 20%;
+            left: 15%;
+        }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0) translateX(0);
+            }
+            50% {
+                transform: translateY(-30px) translateX(20px);
+            }
+        }
+
+        @keyframes gradientShift {
+            0%, 100% {
+                opacity: 1;
+            }
+            50% {
+                opacity: 0.7;
+            }
+        }
+
+        .hero-content {
+            max-width: 1200px;
+            text-align: center;
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 4rem;
+            margin-bottom: 1rem;
+            color: #000000;
+            animation: fadeInUp 1s ease;
+        }
+
+        /* Profile Photo */
+        .profile-photo {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin: 0 auto 2rem;
+            display: block;
+            border: 5px solid #f0f0f0;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+            animation: fadeInUp 1s ease;
+        }
+
+        .hero-subtitle {
+            font-size: 1.5rem;
+            color: var(--text);
+            margin-bottom: 1rem;
+            animation: fadeInUp 1s ease 0.2s backwards;
+        }
+
+        .hero-tagline {
+            font-size: 1.15rem;
+            color: var(--dark);
+            max-width: 750px;
+            margin: 0 auto 2rem;
+            animation: fadeInUp 1s ease 0.4s backwards;
+            line-height: 1.8;
+            font-weight: 500;
+        }
+
+        .tagline-highlight {
+            font-weight: 700;
+            color: var(--secondary);
+            display: block;
+            margin-bottom: 0.5rem;
+            font-size: 1.25rem;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 1rem 2.5rem;
+            background: var(--gradient);
+            color: var(--white);
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: transform 0.3s, box-shadow 0.3s;
+            animation: fadeInUp 1s ease 0.6s backwards;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(102, 126, 234, 0.4);
+        }
+
+        /* Section Styling */
+        section {
+            padding: 5rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            text-align: center;
+            position: relative;
+            color: var(--dark);
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: var(--gradient);
+            border-radius: 2px;
+        }
+
+        /* Cards */
+        .cards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .card {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 5px 25px rgba(0,0,0,0.08);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.12);
+        }
+
+        .card-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+            color: var(--dark);
+        }
+
+        .card ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .card li {
+            padding: 0.5rem 0;
+            color: var(--text);
+            position: relative;
+            padding-left: 1.5rem;
+        }
+
+        .card li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--accent);
+            font-weight: bold;
+        }
+
+        /* Education Timeline */
+        .timeline {
+            position: relative;
+            padding: 2rem 0;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 2px;
+            height: 100%;
+            background: var(--gradient);
+        }
+
+        .timeline-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 3rem;
+            position: relative;
+        }
+
+        .timeline-content {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 5px 25px rgba(0,0,0,0.08);
+            width: 45%;
+        }
+
+        .timeline-item:nth-child(odd) .timeline-content {
+            margin-right: auto;
+        }
+
+        .timeline-item:nth-child(even) .timeline-content {
+            margin-left: auto;
+        }
+
+        .timeline-dot {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 20px;
+            height: 20px;
+            background: var(--gradient);
+            border-radius: 50%;
+            border: 4px solid var(--white);
+            box-shadow: 0 0 0 4px rgba(102, 126, 234, 0.2);
+        }
+
+        /* Skills Grid */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .skill-category {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 5px 25px rgba(0,0,0,0.08);
+        }
+
+        .skill-category h3 {
+            color: var(--secondary);
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+        }
+
+        .skill-tag {
+            display: inline-block;
+            background: linear-gradient(135deg, #E8EAF6 0%, #F3E5F5 100%);
+            padding: 0.5rem 1rem;
+            margin: 0.3rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            color: var(--dark);
+        }
+
+        /* Experience Section */
+        .experience-item {
+            background: var(--white);
+            padding: 2.5rem;
+            margin-bottom: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 5px 25px rgba(0,0,0,0.08);
+            border-left: 5px solid var(--primary);
+        }
+
+        .experience-item h3 {
+            color: var(--dark);
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .experience-item h4 {
+            color: var(--secondary);
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
+        }
+
+        .experience-item p {
+            color: var(--text);
+            line-height: 1.8;
+        }
+
+        /* Personal Info Grid */
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .info-card {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 5px 25px rgba(0,0,0,0.08);
+        }
+
+        .info-item {
+            display: flex;
+            align-items: center;
+            padding: 1rem 0;
+            border-bottom: 1px solid #f0f0f0;
+        }
+
+        .info-item:last-child {
+            border-bottom: none;
+        }
+
+        .info-icon {
+            font-size: 1.5rem;
+            margin-right: 1rem;
+            min-width: 40px;
+        }
+
+        /* Contact Form */
+        .contact-section {
+            background: linear-gradient(135deg, #E8EAF6 0%, #F3E5F5 100%);
+            padding: 5rem 2rem;
+        }
+
+        .contact-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .contact-form {
+            background: var(--white);
+            padding: 3rem;
+            border-radius: 15px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+        }
+
+        .form-group {
+            margin-bottom: 2rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: var(--dark);
+            font-weight: 500;
+        }
+
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 1rem;
+            border: 2px solid #E8EAF6;
+            border-radius: 10px;
+            font-family: 'Poppins', sans-serif;
+            font-size: 1rem;
+            transition: border-color 0.3s;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: var(--primary);
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 150px;
+        }
+
+        .submit-btn {
+            width: 100%;
+            padding: 1rem;
+            background: var(--gradient);
+            color: var(--white);
+            border: none;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .submit-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(102, 126, 234, 0.4);
+        }
+
+        .contact-info {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .contact-card {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 5px 25px rgba(0,0,0,0.08);
+        }
+
+        .contact-card-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .contact-card h3 {
+            color: var(--dark);
+            margin-bottom: 0.5rem;
+        }
+
+        .contact-card a {
+            color: var(--primary);
+            text-decoration: none;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--dark);
+            color: var(--white);
+            padding: 3rem 2rem 2rem;
+            text-align: center;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .footer-links a {
+            color: var(--white);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-links a:hover {
+            color: var(--accent);
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .social-links a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 45px;
+            height: 45px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 50%;
+            color: var(--white);
+            text-decoration: none;
+            transition: background 0.3s;
+        }
+
+        .social-links a:hover {
+            background: var(--primary);
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .hamburger {
+                display: flex;
+            }
+
+            .nav-links {
+                position: fixed;
+                top: 70px;
+                right: -100%;
+                flex-direction: column;
+                background: var(--white);
+                width: 100%;
+                padding: 2rem;
+                box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+                transition: right 0.3s;
+            }
+
+            .nav-links.active {
+                right: 0;
+            }
+
+            .hero {
+                height: 100vh;
+                min-height: 600px;
+                padding: 6rem 1.5rem 2rem;
+            }
+
+            .hero-title {
+                font-size: 2.5rem;
+            }
+
+            .profile-photo {
+                width: 150px;
+                height: 150px;
+                margin-bottom: 1.5rem;
+            }
+
+            .hero-subtitle {
+                font-size: 1.2rem;
+            }
+
+            .hero-tagline {
+                font-size: 1rem;
+                padding: 0 1rem;
+            }
+
+            .tagline-highlight {
+                font-size: 1.1rem;
+            }
+
+            .circle-1, .circle-2, .circle-3 {
+                opacity: 0.5;
+            }
+
+            .circle-1 {
+                width: 200px;
+                height: 200px;
+            }
+
+            .circle-2 {
+                width: 150px;
+                height: 150px;
+            }
+
+            .circle-3 {
+                width: 100px;
+                height: 100px;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .cards-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .timeline::before {
+                left: 0;
+            }
+
+            .timeline-content {
+                width: 100%;
+                margin-left: 2rem !important;
+            }
+
+            .timeline-dot {
+                left: 0;
+            }
+
+            .contact-form {
+                padding: 2rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero-title {
+                font-size: 2rem;
+            }
+
+            .profile-photo {
+                width: 120px;
+                height: 120px;
+                margin-bottom: 1rem;
+            }
+
+            .hero-subtitle {
+                font-size: 1rem;
+            }
+
+            .hero-tagline {
+                font-size: 0.95rem;
+            }
+
+            .tagline-highlight {
+                font-size: 1.05rem;
+            }
+
+            .cta-button {
+                padding: 0.9rem 2rem;
+                font-size: 1rem;
+            }
+        }
+
+        @media (min-width: 769px) and (max-width: 1024px) {
+            .hero-title {
+                font-size: 3.5rem;
+            }
+
+            .hero-subtitle {
+                font-size: 1.3rem;
+            }
+        }
+
+        @media (min-width: 1025px) and (max-width: 1440px) {
+            .hero-title {
+                font-size: 4rem;
+            }
+        }
+
+        @media (min-width: 1441px) {
+            .hero {
+                height: 100vh;
+            }
+
+            .hero-title {
+                font-size: 4.5rem;
+            }
+
+            .hero-subtitle {
+                font-size: 1.7rem;
+            }
+
+            .hero-tagline {
+                font-size: 1.2rem;
+                max-width: 800px;
+            }
+
+            .tagline-highlight {
+                font-size: 1.35rem;
+            }
+        }
+
+        /* Smooth Scroll */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Declaration Section */
+        .declaration-box {
+            background: var(--white);
+            padding: 3rem;
+            border-radius: 15px;
+            box-shadow: 0 5px 25px rgba(0,0,0,0.08);
+            border-left: 5px solid var(--secondary);
+        }
+
+        .declaration-box h3 {
+            color: var(--dark);
+            margin-bottom: 1.5rem;
+        }
+
+        .declaration-box ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .declaration-box li {
+            padding: 0.8rem 0;
+            padding-left: 2rem;
+            position: relative;
+        }
+
+        .declaration-box li::before {
+            content: '⚖️';
+            position: absolute;
+            left: 0;
+        }
+
+        .signature {
+            margin-top: 2rem;
+            padding-top: 2rem;
+            border-top: 2px solid #f0f0f0;
+            font-weight: 600;
+        }
+
+        /* Interests Section */
+        .interests-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .interest-card {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 5px 25px rgba(0,0,0,0.08);
+            text-align: center;
+            transition: transform 0.3s;
+        }
+
+        .interest-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .interest-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .interest-card h3 {
+            color: var(--dark);
+            margin-bottom: 1rem;
+        }
+
+        .interest-card p {
+            color: var(--text);
+            line-height: 1.7;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <div class="logo">SB</div>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#profile">Profile</a></li>
+                <li><a href="#education">Education</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="animated-circle circle-1"></div>
+        <div class="animated-circle circle-2"></div>
+        <div class="animated-circle circle-3"></div>
+        <div class="hero-content">
+            <!-- Profile Photo - Replace this image source with your own photo using Dreamweaver -->
+            <img src="sharon brewster.jpg"="Sharon Brewster - Professional Photo" class="profile-photo">
+            <!-- To replace: Open this file in Dreamweaver, select the image above, and change the src attribute to your photo path -->
+            
+            <h1 class="hero-title">Sharon Brewster</h1>
+            <h2 class="hero-subtitle">Special Educator & Software Engineer</h2>
+            <p class="hero-tagline">
+                <span class="tagline-highlight">Driven by Vision, Defined by Action</span>
+                Combining educational excellence with cutting-edge technology to create inclusive learning environments
+            </p>
+            <a href="#contact" class="cta-button">Get In Touch</a>
+        </div>
+    </section>
+
+    <!-- Professional Profile -->
+    <section id="profile">
+        <h2 class="section-title">Professional Profile</h2>
+        <div class="cards-grid">
+            <div class="card">
+                <div class="card-icon">🎓</div>
+                <h3>Special Education Expertise</h3>
+                <ul>
+                    <li>Certified under Rehabilitation Council of India (RCI)</li>
+                    <li>CRR No. B117601</li>
+                    <li>Autism Spectrum Disorder: Classic Autism, Asperger Syndrome, PDD</li>
+                    <li>Intellectual & Developmental Disabilities (Mild to Profound)</li>
+                    <li>Specific Learning Disabilities: Dyslexia, Dysgraphia, Dyspraxia, Dyscalculia</li>
+                    <li>ADHD & Physical Disabilities</li>
+                    <li>Cerebral Palsy & Mental Retardation</li>
+                    <li>Childhood Disintegrative Disorder & Rett Syndrome</li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <div class="card-icon">🏥</div>
+                <h3>Therapeutic Experience</h3>
+                <ul>
+                    <li>Physiotherapy Assessment (4 cases)</li>
+                    <li>Occupational Therapy Assessment (4 cases)</li>
+                    <li>Speech & Language Assessment (4 cases)</li>
+                    <li>Behavioral Assessment Scales (4 cases)</li>
+                    <li>Comprehensive developmental support</li>
+                    <li>Individualized treatment plans</li>
+                    <li>Family counseling programs</li>
+                    <li>Parent training and support</li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <div class="card-icon">💻</div>
+                <h3>Technical Background</h3>
+                <ul>
+                    <li>MCA & BCA Degrees</li>
+                    <li>Banking IT Operations Specialist</li>
+                    <li>Core Banking Software Expert</li>
+                    <li>Web Development & Multimedia Design</li>
+                    <li>Certified Ethical Hacker (UK)</li>
+                    <li>Hardware & Networking Specialist</li>
+                    <li>Social Media Marketing</li>
+                    <li>Digital Documentation Expert</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education & Certifications -->
+    <section id="education">
+        <h2 class="section-title">Education & Certifications</h2>
+        <div class="timeline">
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <h3>Diploma in Special Education</h3>
+                    <h4>Intellectual and Developmental Disabilities (IDD)</h4>
+                    <p><strong>Rehabilitation Council of India (RCI), New Delhi</strong></p>
+                    <p>St. Agnes, Bendur, Mangaluru, Karnataka</p>
+                    <p><strong>CRR No. B117601</strong></p>
+                    <span class="timeline-badge">Recent</span>
+                </div>
+                <div class="timeline-dot"></div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <h3>MCA (Master of Computer Applications)</h3>
+                    <h4>Capital University, Koderma, Jharkhand, India</h4>
+                    <p>Advanced programming, software engineering, and system analysis</p>
+                    <span class="timeline-badge">Masters</span>
+                </div>
+                <div class="timeline-dot"></div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <h3>BCA (Bachelor of Computer Applications)</h3>
+                    <h4>Capital University, Koderma, Jharkhand, India</h4>
+                    <p>Foundation in computer science and application development</p>
+                    <span class="timeline-badge">Bachelor</span>
+                </div>
+                <div class="timeline-dot"></div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <h3>Senior Secondary Education</h3>
+                    <h4>Board of School Education Hubli, Karnataka</h4>
+                    <p>Kairali Sevak Samaj K.K.S, India</p>
+                    <span class="timeline-badge">12th</span>
+                </div>
+                <div class="timeline-dot"></div>
+            </div>
+        </div>
+
+        <h3 style="text-align: center; margin-top: 4rem; margin-bottom: 2rem; color: var(--dark);">Additional Professional Certifications</h3>
+        <div class="cards-grid">
+            <div class="card">
+                <h4>Multimedia & Animation</h4>
+                <p>Post Graduation Diploma (PDMA) - Thrissur, Kerala</p>
+            </div>
+            <div class="card">
+                <h4>Certified Ethical Hacker</h4>
+                <p>Dundee University, UK</p>
+            </div>
+            <div class="card">
+                <h4>American English</h4>
+                <p>Certified - United Kingdom</p>
+            </div>
+            <div class="card">
+                <h4>Social Service Organizer</h4>
+                <p>Certified - Al-Ain, UAE</p>
+            </div>
+            <div class="card">
+                <h4>Technical Skills</h4>
+                <p>Hardware, Networking, MS Office, Photoshop - Gestalt Institute of Technology, Kerala</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Professional Experience -->
+    <section id="experience">
+        <h2 class="section-title">Professional Experience</h2>
+        
+        <div class="experience-item">
+            <h3>Special Education Teacher</h3>
+            <h4>Devdan Foundation Learning Centre - "A School for Special Children"</h4>
+            <p><strong>Location:</strong> #1, Convent Road, Lashkar Mohalla, Mysore, Karnataka – 570001</p>
+            <p>Creating supportive and engaging environments for students with varying abilities. Implementing differentiated instruction and maintaining detailed progress records. Building strong parent-teacher communication for holistic child development.</p>
+        </div>
+
+        <div class="experience-item">
+            <h3>Multi-Subject Educator</h3>
+            <h4>Global Indian Public School</h4>
+            <p><strong>Location:</strong> Thodupuzha, Idukki, Kerala, India</p>
+            <ul>
+                <li>Artificial Intelligence (Class 9)</li>
+                <li>Computer Science (Classes 3-8)</li>
+                <li>Communicative English (Classes 4-6)</li>
+                <li>Mixed Martial Arts (Classes 3-8)</li>
+                <li>Swimming and Rescue Operations (Classes 3-9)</li>
+            </ul>
+        </div>
+
+        <div class="experience-item">
+            <h3>Social Worker & Digital Media Specialist</h3>
+            <h4>Khandwa Diocesan Social Services (KDSS)</h4>
+            <p><strong>Roles:</strong> Social Worker / Documentation Officer / Social Media Marketing Administrator</p>
+            <ul>
+                <li>Water and Climate India Project - Documentation and field support</li>
+                <li>Women Empowerment & Gender Equality - Social media campaigns</li>
+                <li>Childline Department Khandwa - Digital documentation</li>
+                <li>Quality Education & Skill Training - Awareness materials creation</li>
+            </ul>
+        </div>
+
+        <div class="experience-item">
+            <h3>Banking IT Operations Specialist</h3>
+            <h4>Khaleeji Commercial & Ithmaar Bank, Bahrain</h4>
+            <ul>
+                <li>Core Banking Software: Flex Cube, I Mall, Vision Platform Management</li>
+                <li>EFTS Monitoring and Track-it System Administration</li>
+                <li>ATM, LINKS, DR Services and Transaction Monitoring</li>
+                <li>End of Day (EOD) Process Management for All Branches</li>
+                <li>Incident & Request Handling with 24/7 Operations Support</li>
+            </ul>
+        </div>
+
+        <div class="experience-item">
+            <h3>Training & Development Roles</h3>
+            <h4>Kerala State Government & CAMFORD Institute</h4>
+            <ul>
+                <li>Cyber Security and AI Tools Operation Trainer - Kerala State Government</li>
+                <li>Office Administration Program Trainer - Project E-Health, Kerala State Health Department</li>
+                <li>Assistant Manager - CAMFORD Institute of Logistics & Management, Seef Bahrain</li>
+                <li>IT Operations Management in Banking Sector</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Technical Skills -->
+    <section id="skills">
+        <h2 class="section-title">Technical Skills & Software Proficiency</h2>
+        <div class="skills-grid">
+            <div class="skill-category">
+                <h3>Web Development & Authoring</h3>
+                <div>
+                    <span class="skill-tag">HTML & CSS</span>
+                    <span class="skill-tag">JavaScript</span>
+                    <span class="skill-tag">Adobe Dreamweaver</span>
+                    <span class="skill-tag">Adobe Muse</span>
+                    <span class="skill-tag">Flash with Swish Max</span>
+                    <span class="skill-tag">Director</span>
+                </div>
+            </div>
+
+            <div class="skill-category">
+                <h3>3D Animation & Modeling</h3>
+                <div>
+                    <span class="skill-tag">3ds Max</span>
+                    <span class="skill-tag">V-ray Rendering</span>
+                    <span class="skill-tag">Poser</span>
+                    <span class="skill-tag">Bryce Landscape</span>
+                    <span class="skill-tag">Maya</span>
+                    <span class="skill-tag">AutoCAD</span>
+                </div>
+            </div>
+
+            <div class="skill-category">
+                <h3>Video Editing & Visual Effects</h3>
+                <div>
+                    <span class="skill-tag">Adobe Premiere Pro</span>
+                    <span class="skill-tag">Adobe After Effects</span>
+                    <span class="skill-tag">Sound Forge</span>
+                    <span class="skill-tag">Morpheus</span>
+                    <span class="skill-tag">Edius</span>
+                    <span class="skill-tag">Audacity</span>
+                </div>
+            </div>
+
+            <div class="skill-category">
+                <h3>Graphic Design Suite</h3>
+                <div>
+                    <span class="skill-tag">Adobe Illustrator</span>
+                    <span class="skill-tag">Adobe Photoshop</span>
+                    <span class="skill-tag">Adobe InDesign</span>
+                    <span class="skill-tag">Corel Draw</span>
+                    <span class="skill-tag">ISM Graphics</span>
+                </div>
+            </div>
+
+            <div class="skill-category">
+                <h3>Banking & Core Systems</h3>
+                <div>
+                    <span class="skill-tag">Flex Cube Core Banking</span>
+                    <span class="skill-tag">I Mall Banking Platform</span>
+                    <span class="skill-tag">Vision Banking System</span>
+                    <span class="skill-tag">Track-it Monitoring</span>
+                    <span class="skill-tag">EFTS Management</span>
+                    <span class="skill-tag">ATM Operations</span>
+                </div>
+            </div>
+
+            <div class="skill-category">
+                <h3>Office & Productivity</h3>
+                <div>
+                    <span class="skill-tag">Microsoft Office Suite</span>
+                    <span class="skill-tag">Hardware & Networking</span>
+                    <span class="skill-tag">Cyber Security Tools</span>
+                    <span class="skill-tag">AI Operations Platforms</span>
+                </div>
+            </div>
+
+            <div class="skill-category">
+                <h3>Special Education Assessment</h3>
+                <div>
+                    <span class="skill-tag">Physiotherapy Assessment</span>
+                    <span class="skill-tag">Occupational Therapy Forms</span>
+                    <span class="skill-tag">Speech & Language Proforma</span>
+                    <span class="skill-tag">Behavioral Assessment Scales</span>
+                    <span class="skill-tag">IEP Development</span>
+                </div>
+            </div>
+
+            <div class="skill-category">
+                <h3>Language Proficiency</h3>
+                <div>
+                    <span class="skill-tag">English (Full Proficiency)</span>
+                    <span class="skill-tag">Hindi (Full Proficiency)</span>
+                    <span class="skill-tag">Malayalam (Full Proficiency)</span>
+                    <span class="skill-tag">Telugu</span>
+                    <span class="skill-tag">Tamil</span>
+                    <span class="skill-tag">Kannada</span>
+                    <span class="skill-tag">Sanskrit</span>
+                    <span class="skill-tag">Tulu</span>
+					
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Personal Information & Interests -->
+    <section id="about">
+        <h2 class="section-title">About Me</h2>
+        
+        <h3 style="text-align: center; margin-bottom: 2rem; color: var(--dark);">Personal Information</h3>
+        <div class="info-grid">
+            <div class="info-card">
+                <h4 style="margin-bottom: 1rem; color: var(--secondary);">Basic Details</h4>
+                <div class="info-item">
+                    <span class="info-icon">📅</span>
+                    <div>
+                        <strong>Date of Birth:</strong><br>
+                        April 11 19##
+                    </div>
+                </div>
+                <div class="info-item">
+                    <span class="info-icon">💍</span>
+                    <div>
+                        <strong>Marital Status:</strong><br>
+                        Single
+                    </div>
+                </div>
+                <div class="info-item">
+                    <span class="info-icon">🇮🇳</span>
+                    <div>
+                        <strong>Nationality:</strong><br>
+                        Indian
+                    </div>
+                </div>
+                <div class="info-item">
+                    <span class="info-icon">🏠</span>
+                    <div>
+                        <strong>Current Location:</strong><br>
+                        Karnataka, India
+                    </div>
+                </div>
+            </div>
+
+            <div class="info-card">
+                <h4 style="margin-bottom: 1rem; color: var(--secondary);">Family Background</h4>
+                <div class="info-item">
+                    <span class="info-icon">👨</span>
+                    <div>
+                        <strong>Father:</strong><br>
+                        Tensy Alappat
+                    </div>
+                </div>
+                <div class="info-item">
+                    <span class="info-icon">👩</span>
+                    <div>
+                        <strong>Mother:</strong><br>
+                        Susan MD
+                    </div>
+                </div>
+                <div class="info-item">
+                    <span class="info-icon">🏡</span>
+                    <div>
+                        <strong>Family Residence:</strong><br>
+                        Originally from Kerala, now based in Karnataka
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <p style="text-align: center; max-width: 800px; margin: 2rem auto; color: var(--text); line-height: 1.8;">
+            Supportive family environment that encouraged education and personal development. Strong values in service to community and continuous learning.
+        </p>
+
+        <h3 style="text-align: center; margin: 4rem 0 2rem; color: var(--dark);">Interests & Hobbies</h3>
+        <div class="interests-grid">
+            <div class="interest-card">
+                <div class="interest-icon">📚</div>
+                <h3>Reading & Writing</h3>
+                <p>Passionate about educational literature, motivational content creation, and vlogging. Active YouTuber focusing on educational and inspirational content.</p>
+            </div>
+
+            <div class="interest-card">
+                <div class="interest-icon">🏸</div>
+                <h3>Sports & Athletics</h3>
+                <p>Badminton, cricket, archery, and artistic sports. Active participant in community sports events and tournaments.</p>
+            </div>
+
+            <div class="interest-card">
+                <div class="interest-icon">✈️</div>
+                <h3>Travel & Culture</h3>
+                <p>Exploring diverse cultures, learning about different educational systems, and documenting experiences for cultural awareness.</p>
+            </div>
+
+            <div class="interest-card">
+                <div class="interest-icon">🎤</div>
+                <h3>Public Speaking</h3>
+                <p>Motivational speaking at schools, colleges, and community events. Focus on special education awareness and empowerment.</p>
+            </div>
+
+            <div class="interest-card">
+                <div class="interest-icon">🥋</div>
+                <h3>Martial Arts & Aquatics</h3>
+                <p>Swimming, diving, rescue operations, and mixed martial arts including Kung Fu, Kobudo, Kalari, Judo, Taekwondo, and Shotokan Karate (1st Dan Black Belt - TISKA certified).</p>
+            </div>
+
+            <div class="interest-card">
+                <div class="interest-icon">🎨</div>
+                <h3>Creative Arts</h3>
+                <p>Digital art, multimedia design, photography, and creating educational visual content for special needs children.</p>
+            </div>
+
+            <div class="interest-card">
+                <div class="interest-icon">🌱</div>
+                <h3>Community Service</h3>
+                <p>Volunteering with NGOs, organizing awareness programs, and contributing to social causes related to education and disability rights.</p>
+            </div>
+
+            <div class="interest-card">
+                <div class="interest-icon">💻</div>
+                <h3>Technology & Innovation</h3>
+                <p>Staying updated with latest educational technology, AI tools, and developing digital solutions for special education.</p>
+            </div>
+        </div>
+
+        <h3 style="text-align: center; margin: 4rem 0 2rem; color: var(--dark);">Personal Achievements & Recognition</h3>
+        <div class="cards-grid">
+            <div class="card">
+                <div class="card-icon">🏆</div>
+                <h3>Academic Excellence</h3>
+                <p>Consistent high performance throughout academic career, multiple certifications from international institutions.</p>
+            </div>
+
+            <div class="card">
+                <div class="card-icon">🎯</div>
+                <h3>Professional Growth</h3>
+                <p>Successfully transitioned from IT banking operations to special education, demonstrating adaptability and commitment.</p>
+            </div>
+
+            <div class="card">
+                <div class="card-icon">🤝</div>
+                <h3>Community Impact</h3>
+                <p>Actively contributed to various social service projects, particularly in education and disability awareness.</p>
+            </div>
+
+            <div class="card">
+                <div class="card-icon">🌟</div>
+                <h3>Leadership Qualities</h3>
+                <p>Led training programs, managed teams in banking operations, and guided students in academic and personal development.</p>
+            </div>
+        </div>
+
+        <h3 style="text-align: center; margin: 4rem 0 2rem; color: var(--dark);">Professional Declaration</h3>
+        <div class="declaration-box">
+            <h3>⚖️ Declaration of Authenticity</h3>
+            <p style="margin-bottom: 1.5rem;"><strong>I, Sharon Brewster, hereby declare and affirm that:</strong></p>
+            <ul>
+                <li>All information, qualifications, experiences, and achievements mentioned in this portfolio are accurate and truthful to the best of my knowledge.</li>
+                <li>The educational credentials, professional certifications, and work experiences listed have been personally obtained and completed by me.</li>
+                <li>I am committed to maintaining the highest standards of professional integrity in all my educational and technological endeavors.</li>
+                <li>I understand the importance of ethical practice in special education and pledge to uphold the dignity and rights of all students under my care.</li>
+                <li>This declaration is made in good faith and with full understanding of the professional and legal implications thereof.</li>
+            </ul>
+            <p style="margin-top: 1.5rem;">I am prepared to provide supporting documentation for any claims made herein upon request.</p>
+            <div class="signature">
+                <p><strong>Sharon Brewster</strong></p>
+                <p>Special Educator & Software Engineer</p>
+                <p>RCI Registration No: B117601</p>
+                <p>Place: Karnataka, India</p>
+            </div>
+        </div>
+
+        <h3 style="text-align: center; margin: 4rem 0 2rem; color: var(--dark);">Professional Ethics & Quality Assurance</h3>
+        <div class="cards-grid">
+            <div class="card">
+                <div class="card-icon">🤝</div>
+                <h3>Confidentiality</h3>
+                <p>Committed to maintaining strict confidentiality of all student records, assessment results, and family information in accordance with professional standards.</p>
+            </div>
+
+            <div class="card">
+                <div class="card-icon">📋</div>
+                <h3>Documentation Standards</h3>
+                <p>Maintaining accurate, timely, and comprehensive documentation of all therapeutic interventions and educational progress.</p>
+            </div>
+
+            <div class="card">
+                <div class="card-icon">🔄</div>
+                <h3>Continuous Learning</h3>
+                <p>Dedicated to ongoing professional development and staying current with best practices in special education and technology.</p>
+            </div>
+
+            <div class="card">
+                <div class="card-icon">✅</div>
+                <h3>Evidence-Based Practice</h3>
+                <p>All interventions and teaching strategies are based on current research and evidence-based methodologies in special education.</p>
+            </div>
+
+            <div class="card">
+                <div class="card-icon">📊</div>
+                <h3>Regular Assessment</h3>
+                <p>Implementing regular assessment and evaluation protocols to ensure student progress and program effectiveness.</p>
+            </div>
+
+            <div class="card">
+                <div class="card-icon">👥</div>
+                <h3>Collaborative Approach</h3>
+                <p>Working collaboratively with families, healthcare professionals, and educational teams for holistic student support.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact-section" id="contact">
+        <div class="contact-container">
+            <h2 class="section-title" style="color: var(--dark);">Get In Touch</h2>
+            <p style="text-align: center; margin-bottom: 3rem; color: var(--text);">
+                Ready to make a difference in special education and technology? Let's connect and explore opportunities for collaboration, consultation, or professional engagement.
+            </p>
+
+            <form class="contact-form" id="contactForm">
+                <div class="form-group">
+                    <label for="name">Full Name *</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email Address *</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="phone">Phone Number *</label>
+                    <input type="tel" id="phone" name="phone" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="service">Service Required *</label>
+                    <select id="service" name="service" required>
+                        <option value="">Select a service...</option>
+                        <option value="special-education">Special Education Assessment & Consultation</option>
+                        <option value="iep">Individual Education Plan (IEP) Development</option>
+                        <option value="parent-training">Parent Training & Family Support</option>
+                        <option value="school-consultation">School Consultation & Staff Training</option>
+                        <option value="tech-training">Cyber Security & AI Tools Training</option>
+                        <option value="motivational-speaking">Motivational Speaking</option>
+                        <option value="multimedia">Multimedia & Digital Content Creation</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="message">Message / Description of Need *</label>
+                    <textarea id="message" name="message" required placeholder="Please describe your requirements in detail..."></textarea>
+                </div>
+
+                <button type="submit" class="submit-btn">Send Message via WhatsApp</button>
+            </form>
+
+            <div class="contact-info">
+                <div class="contact-card">
+                    <div class="contact-card-icon">📧</div>
+                    <h3>Email</h3>
+                    <a href="mailto:sharonbrewster2@gmail.com">sharonbrewster2@gmail.com</a>
+                    <p style="margin-top: 0.5rem; font-size: 0.9rem; color: var(--text);">Primary contact for professional inquiries</p>
+                </div>
+
+                <div class="contact-card">
+                    <div class="contact-card-icon">📱</div>
+                    <h3>Phone</h3>
+                    <a href="tel:+917075911975">+91 7075911975</a>
+                    <p style="margin-top: 0.5rem; font-size: 0.9rem; color: var(--text);">Available 9 AM - 6 PM IST</p>
+                </div>
+
+                <div class="contact-card">
+                    <div class="contact-card-icon">📍</div>
+                    <h3>Location</h3>
+                    <p>Karnataka, India</p>
+                    <p style="margin-top: 0.5rem; font-size: 0.9rem; color: var(--text);">Available for local consultations</p>
+                </div>
+            </div>
+
+            <h3 style="text-align: center; margin: 4rem 0 2rem; color: var(--dark);">Consultation Services Available</h3>
+            <div class="cards-grid">
+                <div class="card">
+                    <h4>🎯 Special Education Services</h4>
+                    <ul style="padding-left: 1.5rem;">
+                        <li>Assessment & Program Development</li>
+                        <li>IEP Design & Implementation</li>
+                        <li>Parent Training Programs</li>
+                        <li>School Consultation</li>
+                    </ul>
+                </div>
+
+                <div class="card">
+                    <h4>💻 Technology Training</h4>
+                    <ul style="padding-left: 1.5rem;">
+                        <li>Cyber Security Training</li>
+                        <li>AI Tools Operation</li>
+                        <li>Educational Technology Integration</li>
+                        <li>Digital Content Creation</li>
+                    </ul>
+                </div>
+
+                <div class="card">
+                    <h4>🎤 Speaking & Workshops</h4>
+                    <ul style="padding-left: 1.5rem;">
+                        <li>Motivational Speaking</li>
+                        <li>Awareness Programs</li>
+                        <li>Staff Training Workshops</li>
+                        <li>Physical Education Instruction</li>
+                    </ul>
+                </div>
+
+                <div class="card">
+                    <h4>🤝 Collaboration Opportunities</h4>
+                    <ul style="padding-left: 1.5rem;">
+                        <li>Freelance Projects</li>
+                        <li>Full-time Positions</li>
+                        <li>Research Collaboration</li>
+                        <li>Remote Consultation</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <h3 style="margin-bottom: 1rem;">Sharon Brewster</h3>
+            <p style="margin-bottom: 2rem;">Certified Special Educator & Software Engineer<br>Dedicated to creating inclusive learning environments and technological solutions</p>
+            
+            <div class="footer-links">
+                <a href="#home">Home</a>
+                <a href="#profile">Profile</a>
+                <a href="#education">Education</a>
+                <a href="#experience">Experience</a>
+                <a href="#skills">Skills</a>
+                <a href="#about">About</a>
+                <a href="#contact">Contact</a>
+            </div>
+
+            <div class="social-links">
+                <a href="mailto:sharonbrewster2@gmail.com" title="Email">📧</a>
+                <a href="tel:+917075911975" title="Phone">📱</a>
+                <a href="https://www.linkedin.com/in/sharon-brewster" target="_blank" title="LinkedIn">💼</a>
+                <a href="#" title="YouTube">🎬</a>
+            </div>
+
+            <p style="margin-top: 2rem; padding-top: 2rem; border-top: 1px solid rgba(255,255,255,0.1);">
+                <strong>Professional Standards:</strong> RCI Certified | Ethical Practice | Evidence-Based Methods | Continuous Professional Development
+            </p>
+
+            <p style="margin-top: 1rem; font-size: 0.9rem; opacity: 0.8;">
+                © 2024 Sharon Brewster. All rights reserved.<br>
+                This portfolio represents authentic professional qualifications and experiences. All information is subject to verification.
+            </p>
+
+            <p style="margin-top: 1rem; font-size: 0.85rem; opacity: 0.7;">
+                Designed with accessibility and inclusive design principles | Optimized for all devices
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        // Hamburger Menu Toggle
+        const hamburger = document.getElementById('hamburger');
+        const navLinks = document.getElementById('navLinks');
+
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('active');
+            navLinks.classList.toggle('active');
+        });
+
+        // Close menu when clicking on a link
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                hamburger.classList.remove('active');
+                navLinks.classList.remove('active');
+            });
+        });
+
+        // Smooth scroll with offset for fixed navbar
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    const offset = 80;
+                    const targetPosition = target.offsetTop - offset;
+                    window.scrollTo({
+                        top: targetPosition,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Contact Form Submission to WhatsApp
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const phone = document.getElementById('phone').value;
+            const service = document.getElementById('service').value;
+            const message = document.getElementById('message').value;
+
+            const whatsappMessage = `*New Contact Request*%0A%0A*Name:* ${encodeURIComponent(name)}%0A*Email:* ${encodeURIComponent(email)}%0A*Phone:* ${encodeURIComponent(phone)}%0A*Service Required:* ${encodeURIComponent(service)}%0A%0A*Message:*%0A${encodeURIComponent(message)}`;
+
+            const whatsappURL = `https://wa.me/917075911975?text=${whatsappMessage}`;
+            
+            window.open(whatsappURL, '_blank');
+        });
+
+        // Navbar background on scroll
+        window.addEventListener('scroll', () => {
+            const nav = document.querySelector('nav');
+            if (window.scrollY > 50) {
+                nav.style.background = 'rgba(255, 255, 255, 0.98)';
+                nav.style.boxShadow = '0 2px 25px rgba(0,0,0,0.15)';
+            } else {
+                nav.style.background = 'rgba(255, 255, 255, 0.95)';
+                nav.style.boxShadow = '0 2px 20px rgba(0,0,0,0.1)';
+            }
+        });
+
+        // Fade-in animation on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.card, .experience-item, .timeline-item, .interest-card').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(20px)';
+            el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>
