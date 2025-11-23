@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sharon Brewster - Special Educator & Software Engineer</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        *{margin:0;padding:0;box-sizing:border-box}:root{--primary-blue:#e8f4f8;--accent-teal:#20b2aa;--accent-gold:#d4af37;--soft-cream:#faf7f2;--deep-blue:#1e3a8a;--text-dark:#1a1a1a;--text-light:#666;--shadow-premium:0 20px 60px rgba(0,0,0,0.12);--shadow-hover:0 30px 80px rgba(0,0,0,0.18)}html{scroll-behavior:smooth}body{font-family:'Inter',sans-serif;line-height:1.7;color:var(--text-dark);background:var(--soft-cream);font-weight:400;letter-spacing:0.01em}.icon-container{position:fixed;top:0;left:0;width:100%;height:100vh;pointer-events:none;z-index:9999;overflow:hidden}.floating-icon{position:absolute;font-size:2rem;animation:fall linear infinite;opacity:0}@keyframes fall{0%{top:-10%;opacity:0;transform:translateX(0) rotate(0deg)}10%{opacity:1}90%{opacity:1}100%{top:110%;opacity:0;transform:translateX(var(--drift)) rotate(360deg)}}.fade-out-animation{animation:fadeOutIcons 1s ease-out forwards}@keyframes fadeOutIcons{to{opacity:0;visibility:hidden}}img{max-width:100%;height:auto;display:block}.lazy-load{opacity:0;transition:opacity .3s}.lazy-load.loaded{opacity:1}.navbar{position:fixed;top:0;width:100%;background:rgba(255,255,255,.97);backdrop-filter:blur(20px);padding:1.5rem 3rem;z-index:1000;box-shadow:0 4px 30px rgba(0,0,0,0.05);border-bottom:1px solid rgba(32,178,170,0.1)}.nav-container{display:flex;justify-content:space-between;align-items:center;max-width:1400px;margin:0 auto}.logo{display:flex;align-items:center;gap:1.2rem;text-decoration:none;transition:transform .4s cubic-bezier(0.34, 1.56, 0.64, 1)}.logo:hover{transform:scale(1.05)}.logo-circle{width:55px;height:55px;border-radius:50%;overflow:hidden;background:linear-gradient(135deg,var(--accent-teal),var(--deep-blue));flex-shrink:0;transition:transform .6s ease;box-shadow:0 8px 25px rgba(32,178,170,0.3)}.logo:hover .logo-circle{transform:rotate(360deg)}.logo-image{width:100%;height:100%;border-radius:50%;object-fit:cover}.logo-text{font-family:'Playfair Display',serif;font-size:1.9rem;font-weight:700;background:linear-gradient(135deg,var(--deep-blue),var(--accent-teal));-webkit-background-clip:text;-webkit-text-fill-color:transparent;letter-spacing:-0.02em}.nav-links{display:flex;list-style:none;gap:3rem}.nav-links a{text-decoration:none;color:var(--text-dark);font-weight:500;transition:all .3s ease;position:relative;font-size:0.95rem;letter-spacing:0.02em}.nav-links a:hover{color:var(--accent-teal);transform:translateY(-2px)}.nav-links a::after{content:'';position:absolute;bottom:-8px;left:0;width:0;height:2px;background:linear-gradient(90deg,var(--accent-teal),var(--deep-blue));transition:width .4s cubic-bezier(0.34, 1.56, 0.64, 1)}.nav-links a:hover::after{width:100%}.mobile-menu{display:none;flex-direction:column;cursor:pointer}.mobile-menu span{width:28px;height:2.5px;background:var(--deep-blue);margin:4px 0;border-radius:2px}.hero{height:100vh;background:linear-gradient(135deg,#e8f4f8 0%,#faf7f2 50%,#e8f4f8 100%);display:flex;align-items:center;justify-content:center;text-align:center;position:relative;overflow:hidden}.hero::before{content:'';position:absolute;top:-50%;left:-50%;width:200%;height:200%;background:radial-gradient(circle,rgba(32,178,170,0.08) 0%,transparent 70%);animation:pulse 15s ease-in-out infinite}@keyframes pulse{0%,100%{transform:scale(1)}50%{transform:scale(1.1)}}.hero-content{max-width:1000px;padding:3rem;position:relative;z-index:1}.hero h1{font-family:'Playfair Display',serif;font-size:4.5rem;font-weight:800;background:linear-gradient(135deg,var(--deep-blue),var(--accent-teal),var(--deep-blue));-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin-bottom:1.5rem;animation:fadeInUp 1s ease forwards .5s;opacity:0;letter-spacing:-0.03em;line-height:1.1}.hero .tagline{font-size:1.5rem;color:var(--text-light);margin-bottom:2.5rem;animation:fadeInUp 1s ease forwards .7s;opacity:0;font-weight:400;line-height:1.6}.hero .signature{color:var(--accent-teal);font-weight:600;font-size:1.3rem}.cta-button{display:inline-block;background:linear-gradient(135deg,var(--accent-teal),var(--deep-blue));color:#fff;padding:1.2rem 2.8rem;text-decoration:none;border-radius:50px;font-weight:600;animation:fadeInUp 1s ease forwards .9s;opacity:0;border:none;cursor:pointer;white-space:nowrap;transition:all .4s cubic-bezier(0.34, 1.56, 0.64, 1);margin:0.8rem;box-shadow:0 10px 30px rgba(32,178,170,0.3);font-size:1.05rem;letter-spacing:0.02em}.cta-button:hover{transform:translateY(-5px) scale(1.05);box-shadow:0 20px 50px rgba(30,58,138,.4)}.announcement-section{background:linear-gradient(90deg,var(--accent-teal),var(--deep-blue));padding:1.2rem 0;overflow:hidden}.announcement-container{display:flex;align-items:center;white-space:nowrap}.announcement-text{display:inline-block;padding-left:100%;animation:scroll-left 35s linear infinite;color:#fff;font-size:1.15rem;font-weight:500;letter-spacing:0.02em}@keyframes scroll-left{0%{transform:translateX(0)}100%{transform:translateX(-100%)}}section{padding:8rem 3rem;max-width:100%;margin:0 auto}section>*{max-width:1400px;margin-left:auto;margin-right:auto}.section-title{font-family:'Playfair Display',serif;font-size:3.5rem;font-weight:700;background:linear-gradient(135deg,var(--deep-blue),var(--accent-teal));-webkit-background-clip:text;-webkit-text-fill-color:transparent;text-align:center;margin-bottom:5rem;position:relative;letter-spacing:-0.02em}.section-title::after{content:'';position:absolute;bottom:-20px;left:50%;transform:translateX(-50%);width:80px;height:4px;background:linear-gradient(90deg,var(--accent-teal),var(--deep-blue));border-radius:2px}.about-content{display:grid;grid-template-columns:1fr 1.8fr;gap:6rem;align-items:center}.about-image{width:100%;height:500px;border-radius:30px;overflow:hidden;background:linear-gradient(135deg,var(--primary-blue),var(--accent-teal));transition:all .5s cubic-bezier(0.34, 1.56, 0.64, 1);cursor:pointer;box-shadow:var(--shadow-premium)}.profile-image{width:100%;height:100%;object-fit:cover;transition:transform .5s ease}.about-image:hover{transform:scale(1.03);box-shadow:var(--shadow-hover)}.about-image:hover .profile-image{transform:scale(1.1)}.about-text{font-size:1.15rem;line-height:1.9;color:var(--text-light);font-weight:400}.about-text h3{color:var(--deep-blue);margin-bottom:1.5rem;font-family:'Playfair Display',serif;font-size:2rem;font-weight:600}.about-text p{margin-bottom:1.5rem}.experience-timeline{position:relative;padding:2rem 0}.timeline-item{margin-bottom:5rem;opacity:0;transform:translateX(-100px);transition:all .5s cubic-bezier(0.34, 1.56, 0.64, 1)}.timeline-item.slide-in{opacity:1;transform:translateX(0)}.timeline-content{background:#fff;padding:3rem;border-radius:30px;box-shadow:var(--shadow-premium);transition:all .5s cubic-bezier(0.34, 1.56, 0.64, 1);width:100%;max-width:100%}.timeline-item:hover .timeline-content{transform:translateY(-10px);box-shadow:var(--shadow-hover)}.timeline-content h3{font-family:'Playfair Display',serif;color:var(--deep-blue);margin-bottom:0.8rem;font-size:1.8rem;font-weight:600}.timeline-content h4{color:var(--accent-teal);margin-bottom:1.5rem;font-size:1.2rem;font-weight:500}.timeline-content ul{list-style:none;padding-left:0;margin-top:1.5rem}.timeline-content li{padding:0.8rem 0;color:var(--text-light);position:relative;padding-left:2rem;line-height:1.7}.timeline-content li::before{content:'▹';position:absolute;left:0;color:var(--accent-teal);font-size:1.3rem}.education-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(350px,1fr));gap:3rem}.education-card{background:#fff;padding:3rem;border-radius:30px;box-shadow:var(--shadow-premium);transition:all .4s cubic-bezier(0.34, 1.56, 0.64, 1);cursor:pointer;border:1px solid rgba(32,178,170,0.08);opacity:0;transform:translateX(-80px)}.education-card.slide-in{opacity:1;transform:translateX(0)}.education-card:hover{transform:translateY(-12px) scale(1.03);box-shadow:var(--shadow-hover)}.education-badge{display:inline-block;background:linear-gradient(135deg,var(--accent-teal),var(--deep-blue));color:#fff;padding:0.6rem 1.4rem;border-radius:25px;font-size:0.9rem;margin-bottom:1.5rem;font-weight:600;letter-spacing:0.03em}.education-card h3{font-family:'Playfair Display',serif;color:var(--deep-blue);margin-bottom:0.8rem;font-size:1.6rem;font-weight:600}.education-card h4{color:var(--accent-teal);margin-bottom:1.2rem;font-size:1.15rem;font-weight:500}.education-card p{color:var(--text-light);margin-bottom:0.7rem;line-height:1.7}.gallery-tabs{display:flex;justify-content:center;gap:2rem;margin-bottom:4rem;flex-wrap:wrap}.gallery-tab{padding:1.2rem 2.5rem;background:transparent;border:2px solid var(--accent-teal);border-radius:50px;color:var(--accent-teal);cursor:pointer;transition:all .4s cubic-bezier(0.34, 1.56, 0.64, 1);font-weight:600;font-size:1.05rem;letter-spacing:0.02em}.gallery-tab.active,.gallery-tab:hover{background:linear-gradient(135deg,var(--accent-teal),var(--deep-blue));color:#fff;transform:translateY(-5px);box-shadow:0 10px 30px rgba(32,178,170,.4)}.gallery-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:2rem}.gallery-item{aspect-ratio:1;border-radius:25px;overflow:hidden;cursor:pointer;background:var(--primary-blue);transition:all .4s cubic-bezier(0.34, 1.56, 0.64, 1);box-shadow:var(--shadow-premium);opacity:0;transform:translateX(-80px)}.gallery-item.slide-in{opacity:1;transform:translateX(0)}.gallery-item img{width:100%;height:100%;object-fit:cover;transition:transform .5s ease}.gallery-item iframe{width:100%;height:100%;border:none}.gallery-item:hover{transform:scale(1.08);box-shadow:var(--shadow-hover)}.gallery-item:hover img{transform:scale(1.15)}.skills-container{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:3rem}.skill-category{background:#fff;padding:3rem;border-radius:30px;box-shadow:var(--shadow-premium);transition:all .4s cubic-bezier(0.34, 1.56, 0.64, 1);cursor:pointer;border:1px solid rgba(32,178,170,0.08);opacity:0;transform:translateX(-80px)}.skill-category.slide-in{opacity:1;transform:translateX(0)}.skill-category:hover{transform:translateY(-12px) scale(1.03);box-shadow:var(--shadow-hover)}.skill-category h3{font-family:'Playfair Display',serif;color:var(--deep-blue);margin-bottom:1.5rem;display:flex;align-items:center;gap:0.8rem;font-size:1.5rem;font-weight:600}.skill-category ul{list-style:none;padding:0}.skill-category li{padding:0.8rem 0;color:var(--text-light);border-bottom:1px solid rgba(0,0,0,0.05);line-height:1.6}.skill-category li:last-child{border-bottom:none}.contact{background:linear-gradient(135deg,#e8f4f8 0%,#faf7f2 50%,#e8f4f8 100%)}.contact-form{background:#fff;padding:4rem;border-radius:30px;box-shadow:var(--shadow-premium);max-width:700px;margin:0 auto 4rem;border:1px solid rgba(32,178,170,0.1)}.form-group{margin-bottom:2rem;text-align:left}.form-group label{display:block;margin-bottom:.8rem;color:var(--deep-blue);font-weight:600;font-size:1.05rem}.form-group input,.form-group select,.form-group textarea{width:100%;padding:1.2rem;border:2px solid #eee;border-radius:15px;font-size:1.05rem;transition:all .3s ease;font-family:'Inter',sans-serif;background:#fafafa}.form-group input:focus,.form-group select:focus,.form-group textarea:focus{outline:0;border-color:var(--accent-teal);box-shadow:0 0 0 4px rgba(32,178,170,.12);transform:translateY(-2px);background:#fff}.whatsapp-button{display:inline-flex;align-items:center;justify-content:center;gap:.8rem;background:#25D366;color:#fff;padding:1.2rem 2rem;border-radius:50px;text-decoration:none;margin-top:1.5rem;font-size:1.05rem;font-weight:600;transition:all .4s cubic-bezier(0.34, 1.56, 0.64, 1);box-shadow:0 10px 30px rgba(37,211,102,.3)}.whatsapp-button:hover{background:#128C7E;transform:translateY(-5px) scale(1.05);box-shadow:0 20px 50px rgba(37,211,102,.4)}.contact-info{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:3rem;margin-bottom:3rem}.contact-item{display:flex;flex-direction:column;align-items:center;gap:1.2rem;background:rgba(255,255,255,.95);padding:3rem;border-radius:25px;box-shadow:var(--shadow-premium);transition:all .4s cubic-bezier(0.34, 1.56, 0.64, 1);cursor:pointer;border:1px solid rgba(32,178,170,0.08);opacity:0;transform:translateX(-80px)}.contact-item.slide-in{opacity:1;transform:translateX(0)}.contact-item:hover{transform:translateY(-10px) scale(1.03);box-shadow:var(--shadow-hover)}.contact-item i{font-size:2.5rem;color:#fff;background:linear-gradient(135deg,var(--accent-teal),var(--deep-blue));width:70px;height:70px;border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 10px 30px rgba(32,178,170,0.3)}.contact-item h3{color:var(--deep-blue);font-family:'Playfair Display',serif;font-size:1.4rem;font-weight:600}.contact-item p{color:var(--text-light);text-align:center;line-height:1.6}.social-links{display:flex;justify-content:center;gap:2rem;margin-top:3rem;flex-wrap:wrap}.social-links a{color:var(--deep-blue);font-size:1.8rem;width:60px;height:60px;border-radius:50%;background:rgba(255,255,255,.9);display:flex;align-items:center;justify-content:center;transition:all .4s cubic-bezier(0.34, 1.56, 0.64, 1);box-shadow:0 8px 25px rgba(0,0,0,.1)}.social-links a:hover{background:linear-gradient(135deg,var(--accent-teal),var(--deep-blue));color:#fff;transform:translateY(-8px) rotate(360deg);box-shadow:0 15px 40px rgba(32,178,170,.4)}.contact-footer{margin-top:4rem;padding-top:3rem;border-top:1px solid rgba(32,178,170,.2);color:var(--text-light)}@keyframes fadeInUp{from{opacity:0;transform:translateY(50px)}to{opacity:1;transform:translateY(0)}}@media (max-width:768px){.navbar{padding:1rem 1.5rem}.nav-links{display:none;position:absolute;top:100%;left:0;width:100%;background:rgba(255,255,255,.98);flex-direction:column;padding:1rem 0;box-shadow:0 10px 30px rgba(0,0,0,.1)}.nav-links.show{display:flex}.mobile-menu{display:flex;position:absolute;right:1rem}.hero h1{font-size:2.5rem}.hero .tagline{font-size:1.1rem}.about-content{grid-template-columns:1fr;gap:3rem;padding:0}.about-image{height:350px;margin:0 auto;max-width:100%}.timeline-item,.education-card,.gallery-item,.skill-category,.contact-item{transform:none!important;opacity:1!important;animation:none!important;margin-left:0!important;margin-right:0!important}.timeline-item.slide-in,.education-card.slide-in,.gallery-item.slide-in,.skill-category.slide-in,.contact-item.slide-in{transform:none!important;opacity:1!important}.section-title{font-size:2.5rem}.timeline-content{padding:2rem;margin:0;width:100%;box-sizing:border-box}.timeline-content h3{font-size:1.5rem}.timeline-content h4{font-size:1.1rem}.timeline-content ul{padding-left:0;margin-left:0}.timeline-content li{padding-left:2rem;word-wrap:break-word;overflow-wrap:break-word}.education-card{padding:2rem;margin:0;width:100%;box-sizing:border-box}.education-grid{grid-template-columns:1fr;gap:2rem;padding:0;margin:0}.skill-category{padding:2rem;margin:0;width:100%;box-sizing:border-box}.skills-container{grid-template-columns:1fr;gap:2rem;padding:0;margin:0}.contact-form{padding:2.5rem;margin:0 auto;max-width:100%;box-sizing:border-box}.form-group input,.form-group select,.form-group textarea{padding:1rem;font-size:1rem;width:100%;box-sizing:border-box}.cta-button{padding:1rem 2rem;font-size:1rem;margin:0.5rem;display:inline-block;max-width:100%;box-sizing:border-box}.contact-info{grid-template-columns:1fr;gap:2rem;padding:0;margin:0}.contact-item{padding:2rem;margin:0;width:100%;box-sizing:border-box}.gallery-grid{grid-template-columns:1fr;gap:1.5rem;padding:0;margin:0}.gallery-item{margin:0;width:100%;box-sizing:border-box}section{padding:4rem 1.5rem;overflow-x:hidden;width:100%;box-sizing:border-box}section>*{max-width:100%;margin-left:auto;margin-right:auto;padding-left:0;padding-right:0}.nav-container{padding:0 1rem;width:100%;box-sizing:border-box}.about-text{font-size:1.05rem;padding:0}.about-text h3{font-size:1.6rem}.about-text p{word-wrap:break-word;overflow-wrap:break-word}.hero-content{padding:2rem 1rem;max-width:100%;box-sizing:border-box}.timeline-item{margin-bottom:3rem;width:100%;box-sizing:border-box}body{overflow-x:hidden;width:100%;box-sizing:border-box}*{box-sizing:border-box}.experience-timeline,.education-grid,.skills-container,.gallery-grid,.contact-info{max-width:100%;overflow:hidden}}
+    </style>
+</head>
+<body>
+    <div class="icon-container" id="iconContainer"></div>
+
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="#home" class="logo">
+                <div class="logo-circle">
+                    <img src="sharon-profile.jpg" alt="Sharon Brewster" class="logo-image lazy-load" width="55" height="55" loading="lazy">
+                </div>
+                <span class="logo-text">‎</span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#education">Education</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#gallery">Portfolio</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div class="mobile-menu"><span></span><span></span><span></span></div>
+        </div>
+    </nav>
+
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1>SHARON BREWSTER</h1>
+            <p class="tagline">Special Educator & Software Engineer<br><span class="signature">Driven by Vision, Defined by Action</span></p>
+            <p style="margin-top: 1.5rem; color: var(--text-light); font-size: 1.1rem;">Combining educational excellence with cutting-edge technology to create inclusive learning environments</p>
+            <a href="#contact" class="cta-button">Get In Touch</a>
+            <a href="#experience" class="cta-button">View My Work</a>
+        </div>
+    </section>
+
+    <div class="announcement-section">
+        <div class="announcement-container">
+            <div class="announcement-text">
+                🎓 RCI Certified Special Educator | CRR No. B117601 | 💻 MCA & BCA Graduate | 🏥 Therapeutic Assessment Expert | 🔐 Certified Ethical Hacker | 🌟 Empowering Lives Through Education & Technology | 🤝 Available for Consultations & Collaborations
+            </div>
+        </div>
+    </div>
+
+    <section id="about">
+        <h2 class="section-title">About Me</h2>
+        <div class="about-content">
+            <div class="about-image">
+                <img src="meet-sharon-brewster.jpg" alt="Sharon Brewster" class="profile-image lazy-load" width="500" height="500" loading="lazy">
+            </div>
+            <div class="about-text">
+                <h3>Creating Inclusive Futures</h3>
+                <p>Hello! I'm Sharon Brewster, a passionate Special Educator and Software Engineer dedicated to making a meaningful difference in the lives of children with special needs. My unique combination of technical expertise and educational knowledge allows me to create innovative solutions for inclusive learning environments.</p>
+                <p>Currently serving as a Special Education Teacher at Devdan Foundation Learning Centre in Mysore, I work with children experiencing various developmental and learning challenges, from Autism Spectrum Disorders to Specific Learning Disabilities.</p>
+                <p>My background in technology - including an MCA degree, banking IT operations experience, and ethical hacking certification - enables me to leverage cutting-edge tools and platforms to enhance special education delivery.</p>
+                <p><strong>My Mission:</strong> To bridge the gap between technology and special education, creating accessible, effective, and compassionate learning experiences for every child, regardless of their abilities.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="experience">
+        <h2 class="section-title">Professional Experience</h2>
+        <div class="experience-timeline">
+            <div class="timeline-item slide-animate">
+                <div class="timeline-content">
+                    <h3>Special Education Teacher</h3>
+                    <h4>Devdan Foundation Learning Centre</h4>
+                    <p><strong>Location:</strong> #1, Convent Road, Lashkar Mohalla, Mysore, Karnataka – 570001</p>
+                    <ul>
+                        <li>Creating supportive and engaging environments for students with varying abilities</li>
+                        <li>Implementing differentiated instruction techniques</li>
+                        <li>Maintaining detailed progress records and documentation</li>
+                        <li>Building strong parent-teacher communication for holistic child development</li>
+                        <li>Developing and executing individualized education programs (IEPs)</li>
+                        <li>Working with Autism Spectrum Disorder, Intellectual & Developmental Disabilities</li>
+                        <li>Expertise in Specific Learning Disabilities, ADHD, Physical Disabilities, and Cerebral Palsy</li>
+                        <li>Conducting Physiotherapy, Occupational Therapy, and Speech & Language Assessments</li>
+                        <li>Behavioral Assessment Scales and Treatment Plans</li>
+                        <li>Parent Training and Educational Technology Integration</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="timeline-item slide-animate">
+                <div class="timeline-content">
+                    <h3>Multi-Subject Educator</h3>
+                    <h4>Global Indian Public School</h4>
+                    <p><strong>Location:</strong> Thodupuzha, Idukki, Kerala, India</p>
+                    <ul>
+                        <li>Artificial Intelligence (Class 9)</li>
+                        <li>Computer Science (Classes 3-8)</li>
+                        <li>Communicative English (Classes 4-6)</li>
+                        <li>Mixed Martial Arts (Classes 3-8)</li>
+                        <li>Swimming and Rescue Operations (Classes 3-9)</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="timeline-item slide-animate">
+                <div class="timeline-content">
+                    <h3>Social Worker & Digital Media Specialist</h3>
+                    <h4>Khandwa Diocesan Social Services (KDSS)</h4>
+                    <p><strong>Roles:</strong> Social Worker / Documentation Officer / Social Media Marketing Administrator</p>
+                    <ul>
+                        <li>Water and Climate India Project - Documentation and field support</li>
+                        <li>Women Empowerment & Gender Equality - Social media campaigns</li>
+                        <li>Childline Department Khandwa - Digital documentation</li>
+                        <li>Quality Education & Skill Training - Awareness materials creation</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="timeline-item slide-animate">
+                <div class="timeline-content">
+                    <h3>Banking IT Operations Specialist</h3>
+                    <h4>Khaleeji Commercial & Ithmaar Bank, Bahrain</h4>
+                    <ul>
+                        <li>Core Banking Software: Flex Cube, I Mall, Vision Platform Management</li>
+                        <li>EFTS Monitoring and Track-it System Administration</li>
+                        <li>ATM, LINKS, DR Services and Transaction Monitoring</li>
+                        <li>End of Day (EOD) Process Management for All Branches</li>
+                        <li>Incident & Request Handling with 24/7 Operations Support</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="timeline-item slide-animate">
+                <div class="timeline-content">
+                    <h3>Training & Development</h3>
+                    <h4>Kerala State Government & CAMFORD Institute</h4>
+                    <ul>
+                        <li>Cyber Security and AI Tools Operation Trainer - Kerala State Government</li>
+                        <li>Office Administration Program Trainer - Project E-Health, Kerala State Health Department</li>
+                        <li>Assistant Manager - CAMFORD Institute of Logistics & Management, Seef Bahrain</li>
+                        <li>IT Operations Management in Banking Sector</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="timeline-item slide-animate">
+                <div class="timeline-content">
+                    <h3>Additional Roles</h3>
+                    <h4>Various Organizations</h4>
+                    <ul>
+                        <li>Motivational Speaker at schools and colleges</li>
+                        <li>Community Sports Event Organizer</li>
+                        <li>Educational Content Creator & YouTuber</li>
+                        <li>Martial Arts Instructor (1st Dan Black Belt - TISKA certified)</li>
+                        <li>Special Education Awareness Advocate</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="education">
+        <h2 class="section-title">Education & Certifications</h2>
+        <div class="education-grid">
+            <div class="education-card slide-animate">
+                <span class="education-badge">Recent</span>
+                <h3>Diploma in Special Education</h3>
+                <h4>Intellectual and Developmental Disabilities</h4>
+                <p><strong>Rehabilitation Council of India (RCI), New Delhi</strong></p>
+                <p>St. Agnes, Bendur, Mangaluru, Karnataka</p>
+                <p><strong>CRR No:</strong> B117601</p>
+            </div>
+            <div class="education-card slide-animate">
+                <span class="education-badge">Masters</span>
+                <h3>MCA (Master of Computer Applications)</h3>
+                <h4>Capital University, Koderma, Jharkhand</h4>
+                <p>Advanced programming, software engineering, and system analysis</p>
+            </div>
+            <div class="education-card slide-animate">
+                <span class="education-badge">Bachelor</span>
+                <h3>BCA (Bachelor of Computer Applications)</h3>
+                <h4>Capital University, Koderma, Jharkhand</h4>
+                <p>Foundation in computer science and application development</p>
+            </div>
+            <div class="education-card slide-animate">
+                <span class="education-badge">Certification</span>
+                <h3>Certified Ethical Hacker</h3>
+                <h4>Dundee University, UK</h4>
+                <p>Advanced cybersecurity and ethical hacking techniques</p>
+            </div>
+            <div class="education-card slide-animate">
+                <span class="education-badge">Certification</span>
+                <h3>Post Graduation Diploma</h3>
+                <h4>Multimedia & Animation (PDMA)</h4>
+                <p>Thrissur, Kerala</p>
+            </div>
+            <div class="education-card slide-animate">
+                <span class="education-badge">12th</span>
+                <h3>Senior Secondary Education</h3>
+                <h4>Board of School Education Hubli, Karnataka</h4>
+                <p>Kairali Sevak Samaj K.K.S, India</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="skills">
+        <h2 class="section-title">Technical Skills & Proficiencies</h2>
+        <div class="skills-container">
+            <div class="skill-category slide-animate">
+                <h3>💻 Web Development</h3>
+                <ul>
+                    <li>HTML & CSS</li>
+                    <li>JavaScript</li>
+                    <li>Adobe Dreamweaver</li>
+                    <li>Adobe Muse</li>
+                    <li>Flash with Swish Max</li>
+                    <li>Director</li>
+                </ul>
+            </div>
+            
+            <div class="skill-category slide-animate">
+                <h3>🎨 3D Animation & Modeling</h3>
+                <ul>
+                    <li>3ds Max</li>
+                    <li>V-ray Rendering</li>
+                    <li>Poser</li>
+                    <li>Bryce Landscape</li>
+                    <li>Maya</li>
+                    <li>AutoCAD</li>
+                </ul>
+            </div>
+            
+            <div class="skill-category slide-animate">
+                <h3>🎬 Video Editing & VFX</h3>
+                <ul>
+                    <li>Adobe Premiere Pro</li>
+                    <li>Adobe After Effects</li>
+                    <li>Sound Forge</li>
+                    <li>Morpheus</li>
+                    <li>Edius</li>
+                    <li>Audacity</li>
+                </ul>
+            </div>
+            
+            <div class="skill-category slide-animate">
+                <h3>🖼️ Graphic Design</h3>
+                <ul>
+                    <li>Adobe Illustrator</li>
+                    <li>Adobe Photoshop</li>
+                    <li>Adobe InDesign</li>
+                    <li>Corel Draw</li>
+                    <li>ISM Graphics</li>
+                </ul>
+            </div>
+            
+            <div class="skill-category slide-animate">
+                <h3>🏦 Banking & Core Systems</h3>
+                <ul>
+                    <li>Flex Cube Core Banking</li>
+                    <li>I Mall Banking Platform</li>
+                    <li>Vision Banking System</li>
+                    <li>Track-it Monitoring</li>
+                    <li>EFTS Management</li>
+                    <li>ATM Operations</li>
+                </ul>
+            </div>
+            
+            <div class="skill-category slide-animate">
+                <h3>📋 Special Education Assessment</h3>
+                <ul>
+                    <li>Physiotherapy Assessment</li>
+                    <li>Occupational Therapy Forms</li>
+                    <li>Speech & Language Proforma</li>
+                    <li>Behavioral Assessment Scales</li>
+                    <li>IEP Development</li>
+                </ul>
+            </div>
+            
+            <div class="skill-category slide-animate">
+                <h3>🗣️ Language Proficiency</h3>
+                <ul>
+                    <li>English (Full Proficiency)</li>
+                    <li>Hindi (Full Proficiency)</li>
+                    <li>Malayalam (Full Proficiency)</li>
+                    <li>Telugu</li>
+                    <li>Tamil</li>
+                    <li>Kannada</li>
+                    <li>Sanskrit</li>
+                    <li>Tulu</li>
+                </ul>
+            </div>
+            
+            <div class="skill-category slide-animate">
+                <h3>🥋 Physical Education</h3>
+                <ul>
+                    <li>Mixed Martial Arts</li>
+                    <li>Kung Fu, Kobudo, Kalari</li>
+                    <li>Judo, Taekwondo</li>
+                    <li>Shotokan Karate (1st Dan Black Belt)</li>
+                    <li>Swimming & Diving</li>
+                    <li>Rescue Operations</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section id="gallery" style="background: var(--soft-cream);">
+        <h2 class="section-title">Portfolio & Media</h2>
+        <div class="gallery-tabs">
+            <button class="gallery-tab active" data-tab="work">My Work</button>
+            <button class="gallery-tab" data-tab="testimonials">Testimonials</button>
+            <button class="gallery-tab" data-tab="videos">Videos</button>
+        </div>
+        
+        <div id="work-gallery" class="gallery-grid">
+            <div class="gallery-item slide-animate">
+                <img src="placeholder-image-1.jpg" alt="Work Sample 1" class="lazy-load" width="400" height="400" loading="lazy">
+            </div>
+            <div class="gallery-item slide-animate">
+                <img src="placeholder-image-2.jpg" alt="Work Sample 2" class="lazy-load" width="400" height="400" loading="lazy">
+            </div>
+            <div class="gallery-item slide-animate">
+                <img src="placeholder-image-3.jpg" alt="Work Sample 3" class="lazy-load" width="400" height="400" loading="lazy">
+            </div>
+            <div class="gallery-item slide-animate">
+                <img src="placeholder-image-4.jpg" alt="Work Sample 4" class="lazy-load" width="400" height="400" loading="lazy">
+            </div>
+            <div class="gallery-item slide-animate">
+                <img src="placeholder-image-5.jpg" alt="Work Sample 5" class="lazy-load" width="400" height="400" loading="lazy">
+            </div>
+            <div class="gallery-item slide-animate">
+                <img src="placeholder-image-6.jpg" alt="Work Sample 6" class="lazy-load" width="400" height="400" loading="lazy">
+            </div>
+            <div class="gallery-item slide-animate">
+                <img src="placeholder-image-7.jpg" alt="Work Sample 7" class="lazy-load" width="400" height="400" loading="lazy">
+            </div>
+            <div class="gallery-item slide-animate">
+                <img src="placeholder-image-8.jpg" alt="Work Sample 8" class="lazy-load" width="400" height="400" loading="lazy">
+            </div>
+        </div>
+        
+        <div id="testimonials-gallery" class="gallery-grid" style="display:none;">
+            <div class="gallery-item slide-animate">
+                <iframe width="100%" height="100%" src="https://www.youtube.com/embed/TESTIMONIAL_VIDEO_ID_1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+            </div>
+            <div class="gallery-item slide-animate">
+                <iframe width="100%" height="100%" src="https://www.youtube.com/embed/TESTIMONIAL_VIDEO_ID_2" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+            </div>
+            <div class="gallery-item slide-animate">
+                <iframe width="100%" height="100%" src="https://www.youtube.com/embed/TESTIMONIAL_VIDEO_ID_3" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+            </div>
+            <div class="gallery-item slide-animate">
+                <iframe width="100%" height="100%" src="https://www.youtube.com/embed/TESTIMONIAL_VIDEO_ID_4" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+            </div>
+            <div class="gallery-item slide-animate">
+                <iframe width="100%" height="100%" src="https://www.youtube.com/embed/TESTIMONIAL_VIDEO_ID_5" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+            </div>
+            <div class="gallery-item slide-animate">
+                <iframe width="100%" height="100%" src="https://www.youtube.com/embed/TESTIMONIAL_VIDEO_ID_6" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+            </div>
+            <div class="gallery-item slide-animate">
+                <iframe width="100%" height="100%" src="https://www.youtube.com/embed/TESTIMONIAL_VIDEO_ID_7" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+            </div>
+            <div class="gallery-item slide-animate">
+                <iframe width="100%" height="100%" src="https://www.youtube.com/embed/TESTIMONIAL_VIDEO_ID_8" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+            </div>
+        </div>
+        
+        <div id="videos-gallery" class="gallery-grid" style="display:none;">
+            <div class="gallery-item slide-animate">
+                <iframe width="100%" height="100%" src="https://www.youtube.com/embed/YOUR_VIDEO_ID_1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+            </div>
+            <div class="gallery-item slide-animate">
+                <iframe width="100%" height="100%" src="https://www.youtube.com/embed/YOUR_VIDEO_ID_2" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+            </div>
+            <div class="gallery-item slide-animate">
+                <iframe width="100%" height="100%" src="https://www.youtube.com/embed/YOUR_VIDEO_ID_3" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+            </div>
+            <div class="gallery-item slide-animate">
+                <iframe width="100%" height="100%" src="https://www.youtube.com/embed/YOUR_VIDEO_ID_4" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+            </div>
+            <div class="gallery-item slide-animate">
+                <iframe width="100%" height="100%" src="https://www.youtube.com/embed/YOUR_VIDEO_ID_5" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+            </div>
+            <div class="gallery-item slide-animate">
+                <iframe width="100%" height="100%" src="https://www.youtube.com/embed/YOUR_VIDEO_ID_6" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+            </div>
+            <div class="gallery-item slide-animate">
+                <iframe width="100%" height="100%" src="https://www.youtube.com/embed/YOUR_VIDEO_ID_7" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+            </div>
+            <div class="gallery-item slide-animate">
+                <iframe width="100%" height="100%" src="https://www.youtube.com/embed/YOUR_VIDEO_ID_8" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact">
+        <h2 class="section-title">Get In Touch</h2>
+        <p style="text-align: center; max-width: 800px; margin: 0 auto 4rem; color: var(--text-light); font-size: 1.15rem; line-height: 1.8;">Ready to make a difference in special education and technology? Let's connect and explore opportunities for collaboration, consultation, or professional engagement.</p>
+        
+        <form class="contact-form">
+            <div class="form-group">
+                <label for="name">Full Name *</label>
+                <input type="text" id="name" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email Address *</label>
+                <input type="email" id="email" required>
+            </div>
+            <div class="form-group">
+                <label for="phone">Phone Number</label>
+                <input type="tel" id="phone">
+            </div>
+            <div class="form-group">
+                <label for="service">Service Required *</label>
+                <select id="service" required>
+                    <option value="">Select a service...</option>
+                    <option value="special-education">Special Education Consultation</option>
+                    <option value="assessment">Assessment & IEP Development</option>
+                    <option value="tech-training">Technology Training</option>
+                    <option value="speaking">Speaking Engagement</option>
+                    <option value="collaboration">Professional Collaboration</option>
+                    <option value="other">Other</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="message">Message / Description of Need *</label>
+                <textarea id="message" rows="5" placeholder="Please describe your requirements in detail..." required></textarea>
+            </div>
+            <button type="submit" class="cta-button">Send Message</button>
+            <a href="https://wa.me/917075911975?text=Hi%20Sharon!%20I'd%20like%20to%20discuss%20a%20consultation." class="whatsapp-button">📱 Quick Contact on WhatsApp</a>
+        </form>
+
+        <div class="contact-info">
+            <div class="contact-item slide-animate">
+                <i class="fas fa-phone"></i>
+                <div>
+                    <h3>Call Me</h3>
+                    <p>+91 7075911975</p>
+                    <p style="font-size: 0.95rem;">Available 9 AM - 6 PM IST</p>
+                </div>
+            </div>
+            <div class="contact-item slide-animate">
+                <i class="fas fa-envelope"></i>
+                <div>
+                    <h3>Email</h3>
+                    <p>sharonbrewster2@gmail.com</p>
+                    <p style="font-size: 0.95rem;">Primary contact for inquiries</p>
+                </div>
+            </div>
+            <div class="contact-item slide-animate">
+                <i class="fas fa-map-marker-alt"></i>
+                <div>
+                    <h3>Location</h3>
+                    <p>Karnataka, India</p>
+                    <p style="font-size: 0.95rem;">Available for local consultations</p>
+                </div>
+            </div>
+        </div>
+
+        <div style="background: rgba(255,255,255,0.95); padding: 3rem; border-radius: 30px; max-width: 1000px; margin: 4rem auto; box-shadow: var(--shadow-premium); border: 1px solid rgba(32,178,170,0.1);">
+            <h3 style="font-family: 'Playfair Display', serif; color: var(--deep-blue); text-align: center; margin-bottom: 2.5rem; font-size: 2rem; font-weight: 600;">Consultation Services Available</h3>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 2.5rem; text-align: center;">
+                <div>
+                    <div style="font-size: 3rem; margin-bottom: 1rem;">🎯</div>
+                    <h4 style="color: var(--accent-teal); margin-bottom: 0.8rem; font-size: 1.2rem; font-weight: 600;">Special Education</h4>
+                    <p style="font-size: 0.95rem; color: var(--text-light); line-height: 1.7;">Assessment & IEP Development, Parent Training</p>
+                </div>
+                <div>
+                    <div style="font-size: 3rem; margin-bottom: 1rem;">💻</div>
+                    <h4 style="color: var(--accent-teal); margin-bottom: 0.8rem; font-size: 1.2rem; font-weight: 600;">Technology Training</h4>
+                    <p style="font-size: 0.95rem; color: var(--text-light); line-height: 1.7;">Cyber Security, AI Tools, EdTech Integration</p>
+                </div>
+                <div>
+                    <div style="font-size: 3rem; margin-bottom: 1rem;">🎤</div>
+                    <h4 style="color: var(--accent-teal); margin-bottom: 0.8rem; font-size: 1.2rem; font-weight: 600;">Speaking & Workshops</h4>
+                    <p style="font-size: 0.95rem; color: var(--text-light); line-height: 1.7;">Motivational Speaking, Awareness Programs</p>
+                </div>
+                <div>
+                    <div style="font-size: 3rem; margin-bottom: 1rem;">🤝</div>
+                    <h4 style="color: var(--accent-teal); margin-bottom: 0.8rem; font-size: 1.2rem; font-weight: 600;">Collaboration</h4>
+                    <p style="font-size: 0.95rem; color: var(--text-light); line-height: 1.7;">Freelance Projects, Research, Remote Consultation</p>
+                </div>
+            </div>
+        </div>
+
+        <div style="background: rgba(255,255,255,0.95); padding: 3rem; border-radius: 30px; max-width: 1000px; margin: 4rem auto; text-align: left; box-shadow: var(--shadow-premium); border: 1px solid rgba(32,178,170,0.1);">
+            <h3 style="font-family: 'Playfair Display', serif; color: var(--deep-blue); text-align: center; margin-bottom: 2rem; font-size: 2rem; font-weight: 600;">⚖️ Professional Declaration</h3>
+            <p style="color: var(--text-light); line-height: 1.9; margin-bottom: 1.5rem; font-size: 1.05rem;">I, Sharon Brewster, hereby declare and affirm that all information, qualifications, experiences, and achievements mentioned in this portfolio are accurate and truthful to the best of my knowledge.</p>
+            <p style="color: var(--text-light); line-height: 1.9; margin-bottom: 1.5rem; font-size: 1.05rem;">I am committed to maintaining the highest standards of professional integrity in all my educational and technological endeavors, and pledge to uphold the dignity and rights of all students under my care.</p>
+            <p style="text-align: center; margin-top: 2.5rem; color: var(--deep-blue); font-weight: 600; font-size: 1.1rem; line-height: 1.7;">Sharon Brewster<br>Special Educator & Software Engineer<br>RCI Registration No: B117601</p>
+        </div>
+
+        <div class="social-links">
+            <a href="#" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+            <a href="#" title="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="#" title="YouTube"><i class="fab fa-youtube"></i></a>
+            <a href="https://wa.me/917075911975" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+            <a href="#" title="Facebook"><i class="fab fa-facebook"></i></a>
+        </div>
+
+        <div class="contact-footer">
+            <p style="font-size: 1.05rem; text-align: center;">© 2024 Sharon Brewster. All rights reserved.</p>
+            <p style="margin-top: 0.8rem; font-size: 0.95rem; text-align: center;">RCI Certified | Ethical Practice | Evidence-Based Methods | Continuous Professional Development</p>
+            <p style="margin-top: 0.8rem; font-size: 0.9rem; text-align: center;">This portfolio represents authentic professional qualifications and experiences. All information is subject to verification.</p>
+        </div>
+    </section>
+
+    <script>
+        let lastScrollY=window.scrollY;let ticking=false;function handleSlideEffect(){const scrollY=window.scrollY;const slideElements=document.querySelectorAll('.slide-animate');slideElements.forEach((el,index)=>{const rect=el.getBoundingClientRect();const windowHeight=window.innerHeight;const elementTop=rect.top;const isInViewport=elementTop<windowHeight-50;if(isInViewport){setTimeout(()=>{el.classList.add('slide-in')},index*50)}});ticking=false}function onScroll(){if(!ticking){window.requestAnimationFrame(handleSlideEffect);ticking=true}}window.addEventListener('scroll',onScroll);window.addEventListener('load',()=>{handleSlideEffect()});function createFloatingIcons(){const container=document.getElementById('iconContainer');const icons=['🎓','💻','🏥','📚','✨','🌟','🎯','💡'];for(let i=0;i<25;i++){const icon=document.createElement('div');icon.className='floating-icon';icon.textContent=icons[Math.floor(Math.random()*icons.length)];icon.style.left=Math.random()*100+'%';icon.style.setProperty('--drift',(Math.random()-.5)*100+'px');const duration=5+Math.random()*5;icon.style.animationDuration=duration+'s';icon.style.animationDelay=(Math.random()*3)+'s';container.appendChild(icon)}setTimeout(()=>{container.classList.add('fade-out-animation');setTimeout(()=>{container.remove()},1000)},8000)}window.addEventListener('load',()=>{createFloatingIcons()});document.querySelector('.mobile-menu').addEventListener('click',()=>document.querySelector('.nav-links').classList.toggle('show'));document.querySelectorAll('.gallery-tab').forEach(tab=>{tab.addEventListener('click',()=>{document.querySelectorAll('.gallery-tab').forEach(t=>t.classList.remove('active'));tab.classList.add('active');const selectedTab=tab.getAttribute('data-tab');document.getElementById('work-gallery').style.display='none';document.getElementById('testimonials-gallery').style.display='none';document.getElementById('videos-gallery').style.display='none';if(selectedTab==='work'){document.getElementById('work-gallery').style.display='grid'}else if(selectedTab==='testimonials'){document.getElementById('testimonials-gallery').style.display='grid'}else if(selectedTab==='videos'){document.getElementById('videos-gallery').style.display='grid'}setTimeout(()=>{handleSlideEffect()},100)})});document.querySelectorAll('a[href^="#"]').forEach(anchor=>{anchor.addEventListener('click',function(e){e.preventDefault();const target=document.querySelector(this.getAttribute('href'));if(target)window.scrollTo({top:target.offsetTop-80,behavior:'smooth'});if(window.innerWidth<=768)document.querySelector('.nav-links').classList.remove('show')})});document.querySelector('.contact-form').addEventListener('submit',function(e){e.preventDefault();const name=document.getElementById('name').value;const email=document.getElementById('email').value;const phone=document.getElementById('phone').value;const service=document.getElementById('service').value;const message=document.getElementById('message').value;const msg=`Hi Sharon! I'd like to connect with you:\n\nName: ${name}\nEmail: ${email}\nPhone: ${phone||'Not provided'}\nService Required: ${service}\nMessage: ${message}\n\nLooking forward to hearing from you!`;window.open(`https://wa.me/917075911975?text=${encodeURIComponent(msg)}`,'_blank');alert('Thank you! You will be redirected to WhatsApp.')});document.addEventListener('DOMContentLoaded',()=>{document.querySelectorAll('.lazy-load').forEach(img=>{const observer=new IntersectionObserver((entries,observer)=>{entries.forEach(entry=>{if(entry.isIntersecting){const lazyImg=entry.target;lazyImg.classList.add('loaded');observer.unobserve(lazyImg)}})});observer.observe(img)})});
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/js/all.min.js" defer></script>
+</body>
+</html>
